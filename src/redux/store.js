@@ -13,7 +13,6 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 
-// Configurare persist pentru redux-persist
 const persistConfig = {
   key: 'root',
   storage,
@@ -25,7 +24,6 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Configurare store cu reducer persistent
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
